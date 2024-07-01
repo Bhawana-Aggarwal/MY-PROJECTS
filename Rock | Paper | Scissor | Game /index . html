@@ -1,1 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Meta information about the document -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Title of the web page -->
+    <title>Rock | Paper | Scissor |</title>
+    
+    <!-- Link to external CSS file for styling -->
+    <link rel="stylesheet" href="style.css"> 
+</head> 
+<body>
+    <!-- Main heading of the game -->
+    <h1>Rock | Paper | Scissor</h1>
+
+    <!-- Container for the choices (rock, paper, scissors) -->
+    <div class="choices">
+        <!-- Paper choice -->
+        <div class="choice" id="paper">
+            <img src="paper.png"> 
+        </div>
+        <!-- Rock choice -->
+        <div class="choice" id="rock">
+            <img src="rock.png">
+        </div>
+        <!-- Scissors choice -->
+        <div class="choice" id="scissors">
+            <img src="scissors.png">
+        </div>
+    </div>
+
+    <!-- Container for the score board -->
+    <div class="score-board">
+        <!-- User score display -->
+        <div class="score">
+            <p id="user-score">0</p>
+            <p>YOU</p>
+        </div>
+        <!-- Computer score display -->
+        <div class="score"> 
+            <p id="comp-score">0</p> 
+            <p>COMP</p>
+        </div>
+    </div>
+
+    <!-- Container for result messages -->
+    <div class="msg-container">
+        <p id="msg">Play Your move ...</p>
+    </div>
+
+    <!-- Container to display user and computer choices -->
+    <div class="msg-container">
+        <p id="userDisplay" class="mesg">YOUR CHOICE :</p>
+        <p id="compDisplay" class="mesg">COMP CHOICE :</p>
+    </div>
+ 
+    <!-- Link to external JavaScript file -->
+    <script src="script.js"></script>
+</body>
+</html>
 
