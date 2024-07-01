@@ -1,0 +1,74 @@
+// Initialize user and computer scores
+let userScore = 0;
+let compScore = 0;
+
+// Select DOM elements to display scores and messages
+let userMark = document.querySelector("#user-score");
+let compMark = document.querySelector("#comp-score");
+let msg = document.querySelector("#msg");
+let choices = document.querySelectorAll(".choice");
+let userDisplay = document.querySelector("#userDisplay");
+let compDisplay = document.querySelector("#compDisplay");
+
+// Add event listeners to user choices
+choices.forEach((choice) => {
+    choice.addEventListener("click", () => {
+        const userChoice = choice.getAttribute("id"); // Get the id of the clicked choice
+        playGame(userChoice); // Play the game with the user's choice
+    });
+});
+
+// Function to generate a random computer choice
+const genCompChoice = () => {
+    let option = ["rock", "paper", "scissors"];
+    let ranIdx = Math.floor(Math.random() * 3); // Random index between 0 and 2
+    return option[ranIdx]; // Return the random choice
+}
+
+// Function to play the game
+const playGame = (userChoice) => {
+    console.log("user choice: ", userChoice);
+
+    // Generate a random computer choice
+    const compChoice = genCompChoice();
+    console.log("computer choice: ", compChoice);
+
+    // Check for a draw
+    if (userChoice === compChoice) {
+        console.log("Game Draw.");
+        msg.innerText = "Game Draw. Next move.";
+        msg.style.backgroundColor = "black";
+        userDisplay.innerText = `YOUR CHOICE: ${userChoice}`;
+        compDisplay.innerText = `COMP CHOICE: ${compChoice}`;
+    } else {
+        // Determine if the user wins
+        let userWin = true;
+        if (userChoice === "paper")
+            userWin = compChoice === "rock" ? true : false; // Paper beats rock
+        else if (userChoice === "rock")
+            userWin = compChoice === "paper" ? false : true; // Rock beats scissors
+        else
+            userWin = compChoice === "paper" ? true : false; // Scissors beats paper
+
+        // Display the final result
+        finalResult(userWin, userChoice, compChoice);
+    }
+}
+
+// Function to display the final result and update scores
+const finalResult = (userWin, userChoice, compChoice) => {
+    if (userWin) {
+        userScore++; // Increment user score
+        userMark.innerText = userScore; // Update user score display
+        msg.innerText = `You Win! Your ${userChoice} beats ${compChoice}`;
+        msg.style.backgroundColor = "green"; // Change message background to green
+    } else {
+        compScore++; // Increment computer score
+        compMark.innerText = compScore; // Update computer score display
+        msg.innerText = `You lost! ${compChoice} beats your ${userChoice}`;
+        msg.style.backgroundColor = "red"; // Change message background to red
+    }
+    // Update user and computer choice displays
+    userDisplay.innerText = `YOUR CHOICE :  ${userChoice} `;
+    compDisplay.innerText = `COMP CHOICE :  ${compChoice} `;
+}
