@@ -1,14 +1,11 @@
-<!-- code to create a Rock | Paper | Scissor Game using HTML | CSS | JS
+<!-- code to create a Rock | Paper | Scissor Game using HTML | CSS | JS -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <!-- Meta information about the document -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Title of the web page -->
     <title>Rock | Paper | Scissor |</title>
-    
     <!-- Link to external CSS file for styling -->
     <link rel="stylesheet" href="style.css"> 
 </head> 
