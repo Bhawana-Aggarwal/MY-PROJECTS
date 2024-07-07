@@ -1,0 +1,40 @@
+let string = "";    // Initialize an empty string to store the input expression
+// Select all buttons that are either .button, .operator, or .equalBtn
+let buttons = document.querySelectorAll(".button, .operator, .equalBtn");    
+
+// Iterate over each button in the selected collection
+Array.from(buttons).forEach((button) => {
+    button.addEventListener('click', (e) => {           // Add a click event listener to each button
+        // Check if the clicked button is '=' for evaluation
+        if (e.target.innerHTML == '=') {
+            try {
+                string = eval(string);          // Evaluate the stored string expression
+                document.querySelector('input').value = string;     // Display the evaluated result in the input field
+            }
+            // Catch any errors that occur during evaluation
+            catch (e) {
+                alert("An error occurred. Clear the screen.");
+            }
+        }
+        // Check if the clicked button is 'AC' to clear the input
+        else if (e.target.innerHTML == 'AC') {
+            string = "";  // Clear the stored string
+            document.querySelector('input').value = string;  // Clear the input field
+        }
+        // Check if the clicked button is 'DEL' to delete the last character
+        else if (e.target.innerHTML == 'DEL') {
+            string = string.slice(0, -1);  // Remove the last character from the string
+            document.querySelector('input').value = string;  // Update the input field
+        }
+        // Check if the clicked button is '%' to calculate percentage
+        else if (e.target.innerHTML == '%') {
+            string = (eval(string) / 100) + "*";  // Calculate percentage and update string
+            document.querySelector('input').value = string;  // Update the input field
+        }
+        // For other buttons, concatenate their value to the string
+        else {
+            string = string + e.target.innerHTML;  // Concatenate button value to string
+            document.querySelector('input').value = string;  // Update the input field
+        }
+    })
+})
