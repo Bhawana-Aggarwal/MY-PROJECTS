@@ -1,0 +1,47 @@
+<!-- code to design a calculator using HTML | CSS | JS
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">           <!-- Link to external CSS file -->
+</head>
+<body>
+    <div class="container">             <!-- container for the calculator -->
+        <div>
+            <input type="text" placeholder="0" id="inputBox">       <!-- Input box to display and enter numbers -->
+        </div>
+        
+        <div class="buttons">
+            <!-- Operator buttons & clear buttons & number buttons  -->
+            <button class="operator">AC</button>
+            <button class="operator">DEL</button> 
+            <button class="operator">/</button>
+            <button class="operator">%</button>
+        
+            <button class="button">7</button>
+            <button class="button">8</button>
+            <button class="button">9</button>
+            <button class="operator ">*</button>
+       
+            <button class="button">4</button>
+            <button class="button">5</button>
+            <button class="button">6</button>
+            <button class="operator ">-</button>
+     
+            <button class="button">1</button>
+            <button class="button">2</button>
+            <button class="button">3</button>
+            <button class="operator ">+</button>
+        
+            <button class="button">00</button> 
+            <button class="button">0</button>
+            <button class="button">.</button>
+            <button class="equalBtn ">=</button>    <!-- equal to button -->
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
