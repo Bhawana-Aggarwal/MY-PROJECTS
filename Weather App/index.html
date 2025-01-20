@@ -1,1 +1,24 @@
+<!-- http://api.weatherapi.com/v1/current.json?key=6debc839280a4a5097a125437252001&q=London&aqi=yes -->
 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Weather App</h1>
+    <form id="weatherForm">
+      <input type="text" id="locationInput" placeholder="Enter a location" required>
+      <button type="submit">Get Weather</button>
+    </form>
+    <div id="weatherResult" class="weather-result">
+      <!-- Weather details will appear here -->
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
